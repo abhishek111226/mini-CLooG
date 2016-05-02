@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <polylib/polylib.h>
+int main() {
+Matrix *a1, *a2;
+Polyhedron *D1, *D2, *D3;
+a1 = Matrix_Read();
+a2 = Matrix_Read();
+D1 = Constraints2Polyhedron(a1, 200);
+D2 = Constraints2Polyhedron(a2, 200);
+D3 = DomainIntersection(D1,D2,200);
+printf("\n D3 =");
+fflush(stdout);
+//Polyhedron_Print(stdout,P_VALUE_FMT,D3);
+}
